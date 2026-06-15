@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+
+@theme {
+  /* ── Fonts ── */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-geist-sans), system-ui, sans-serif;
+
+  /* ── Colors ── */
+  --color-background: #f0ebe3;
+  --color-surface: #f8f4ef;
+  --color-surface-raised: #ffffff;
+
+  --color-foreground: #1c1410;
+  --color-muted: #8b7969;
+  --color-subtle: #bfb0a3;
+
+  --color-accent: #9e6b3f;
+  --color-accent-light: #c49a72;
+
+  --color-border: #e4d9cf;
+  --color-border-strong: #c9b9aa;
+
+  --color-selected: #231a12;
+
+  /* ── Radius ── */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Display / editorial headings ── */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  h5 {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
+  h6 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+  }
+
+  /* ── Accent word — one highlighted word inside a heading ── */
+  .accent-word {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-accent);
+  }
+
+  /* ── Body text ── */
+  p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-muted);
+  }
+
+  /* ── Label / eyebrow text ── */
+  .label {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .label-accent {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+}

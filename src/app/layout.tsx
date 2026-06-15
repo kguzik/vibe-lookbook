@@ -1,21 +1,24 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Geist } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
+import "./globals.css";
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: 'Vibe Lookbook - Your Personal Lookbook creator',
+  title: "Vibe Lookbook — Your AI-Styled Fashion Lookbook",
   description:
-    'Upload your photos, pick your vibe, and watch a premium AI-generated lookbook build itself in real time.',
+    "Upload a selfie, pick your vibe, and get AI-generated editorial looks you can shop.",
 };
 
 export default function RootLayout({
@@ -25,10 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="en"
+      className={`${geistSans.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className='min-h-full flex flex-col'>{children}</body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
