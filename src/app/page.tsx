@@ -1,10 +1,15 @@
 import { Container } from '@/components/ui/Container'
+import { TextHero } from '@/components/ui/TextHero'
 
 export default function Home() {
   return (
     <main>
       <Container size="full">
-        <h1 className="pt-10 text-center text-4xl font-bold">Vibe Lookbook</h1>
+        <TextHero
+          heading="Your Style,"
+          accentWord="Reimagined"
+          subtitle="Upload a selfie, pick a vibe, and get AI-styled outfits you can shop - all in a few taps."
+        />
       </Container>
     </main>
   )
