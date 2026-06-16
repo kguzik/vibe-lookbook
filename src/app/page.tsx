@@ -11,6 +11,11 @@ export default function Home() {
             heading="Your Style,"
             accentWord="Reimagined"
             subtitle="Upload a selfie, pick a vibe, and get AI-styled outfits you can shop - all in a few taps."
+            primaryButton={{
+              label: 'Get Started',
+              size: 'lg',
+              href: '/generate',
+            }}
           />
         </Container>
       </Section>
