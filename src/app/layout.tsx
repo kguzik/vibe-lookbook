@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Source_Sans_3, Playfair_Display } from 'next/font/google'
+import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import './globals.css'
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       className={`${sourceSans.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <Header />
         {children}
         <Footer />
       </body>
