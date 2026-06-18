@@ -4,7 +4,7 @@ type ButtonConfig = ButtonProps & {
   label: string
 }
 
-type TextHeroProps = {
+type HeroProps = {
   heading: string
   accentWord?: string
   subtitle?: string
@@ -13,14 +13,14 @@ type TextHeroProps = {
   className?: string
 }
 
-export function TextHero({
+export function Hero({
   heading,
   accentWord,
   subtitle,
   primaryButton,
   secondaryButton,
   className = '',
-}: TextHeroProps) {
+}: HeroProps) {
   return (
     <div className={`space-y-6 text-center ${className}`}>
       <div className="space-y-3">

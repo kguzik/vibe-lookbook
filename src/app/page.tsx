@@ -1,5 +1,5 @@
 import { Container } from '@/components/ui/Container'
-import { TextHero } from '@/components/ui/TextHero'
+import { Hero } from '@/components/ui/Hero'
 import { Section } from '@/components/ui/Section'
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Section disableTopMargin>
         <Container size="full">
-          <TextHero
+          <Hero
             heading="Your Style,"
             accentWord="Reimagined"
             subtitle="Upload a selfie, pick a vibe, and get AI-styled outfits you can shop - all in a few taps."

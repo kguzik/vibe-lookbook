@@ -1,4 +1,4 @@
-import { TextHero } from '@/components/ui/TextHero'
+import { Hero } from '@/components/ui/Hero'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { notFoundContent } from '@/content/not-found'
@@ -13,7 +13,7 @@ export default function NotFound() {
           <p className="font-display text-[12rem] leading-none font-bold text-[var(--color-border)]">
             404
           </p>
-          <TextHero
+          <Hero
             heading={heading}
             accentWord={accentWord}
             subtitle={subtitle}
