@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface-sunken)]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-[var(--color-surface-sunken)]/90 py-2 backdrop-blur-md">
       <Container size="lg">
         <div className="flex h-14 items-center justify-between">
           <Logo />

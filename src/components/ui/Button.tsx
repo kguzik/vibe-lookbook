@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { type ButtonHTMLAttributes } from 'react'
+import { type ButtonHTMLAttributes, type ReactNode } from 'react'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost'
 type ButtonSize = 'sm' | 'md' | 'lg'
@@ -8,6 +8,8 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
   size?: ButtonSize
   href?: string
+  iconLeft?: ReactNode
+  iconRight?: ReactNode
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -28,6 +30,8 @@ export function Button({
   variant = 'primary',
   size = 'md',
   href,
+  iconLeft,
+  iconRight,
   className = '',
   disabled,
   children,
@@ -43,17 +47,25 @@ export function Button({
     .filter(Boolean)
     .join(' ')
 
+  const content = (
+    <>
+      {iconLeft && <span className="shrink-0">{iconLeft}</span>}
+      {children}
+      {iconRight && <span className="shrink-0">{iconRight}</span>}
+    </>
+  )
+
   if (href) {
     return (
       <Link href={href} className={classes}>
-        {children}
+        {content}
       </Link>
     )
   }
 
   return (
     <button disabled={disabled} className={classes} {...props}>
-      {children}
+      {content}
     </button>
   )
 }

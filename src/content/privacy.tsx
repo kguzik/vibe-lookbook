@@ -3,6 +3,7 @@ const email = 'vibebooklooks@gmail.com'
 const MailLink = () => <a href={`mailto:${email}`}>{email}</a>
 
 export const privacyContent = {
+  buttonLabel: 'Back to home',
   hero: {
     title: 'Privacy Policy',
     subtitle: 'Last updated: June 4, 2026',

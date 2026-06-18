@@ -1,6 +1,7 @@
 import { Container } from '@/components/ui/Container'
 import { Hero } from '@/components/ui/Hero'
 import { Section } from '@/components/ui/Section'
+import { Sparkles } from '@/components/icons/Sparkles'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
               label: 'Get Started',
               size: 'lg',
               href: '/generate',
+              iconLeft: <Sparkles />,
             }}
           />
         </Container>

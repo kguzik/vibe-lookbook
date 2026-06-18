@@ -2,12 +2,12 @@ import { SmallHero } from '@/components/ui/SmallHero'
 import { ContentList } from '@/components/ui/ContentList'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
-import { privacyContent } from '@/content/privacy'
+import { termsContent } from '@/content/terms'
 import { Button } from '@/components/ui/Button'
 import { ChevronLeft } from '@/components/icons/ChevronLeft'
 
-export default function PrivacyPage() {
-  const { buttonLabel, hero, sections } = privacyContent
+export default function TermsPage() {
+  const { buttonLabel, hero, sections } = termsContent
 
   return (
     <Section disableTopMargin>
