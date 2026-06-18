@@ -2,20 +2,22 @@ import { Container } from '@/components/ui/Container'
 import { Hero } from '@/components/ui/Hero'
 import { Section } from '@/components/ui/Section'
 import { Sparkles } from '@/components/icons/Sparkles'
+import { homeData } from '@/content/home'
 
 export default function Home() {
+  const { hero } = homeData
+
   return (
     <main>
       <Section disableTopMargin>
         <Container size="full">
           <Hero
-            heading="Your Style,"
-            accentWord="Reimagined"
-            subtitle="Upload a selfie, pick a vibe, and get AI-styled outfits you can shop - all in a few taps."
+            heading={hero.heading}
+            accentWord={hero.accentWord}
+            subtitle={hero.subtitle}
             primaryButton={{
-              label: 'Get Started',
+              ...hero.primaryButton,
               size: 'lg',
-              href: '/generate',
               iconLeft: <Sparkles />,
             }}
           />

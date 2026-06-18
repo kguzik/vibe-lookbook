@@ -7,7 +7,7 @@ export function Footer() {
   const { tagline, navLinks, copyright } = footerData
 
   return (
-    <footer className="mt-auto border-t border-[var(--color-border)] bg-[var(--color-surface-sunken)]">
+    <footer className="mt-auto border-t border-[var(--color-border)] bg-[var(--color-surface-subtle)]">
       <Container size="lg">
         <div className="flex flex-col items-center gap-4 py-8 text-center md:flex-row md:justify-between md:text-left">
           <div className="space-y-2">

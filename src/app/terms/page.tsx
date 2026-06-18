@@ -10,20 +10,30 @@ export default function TermsPage() {
   const { buttonLabel, hero, sections } = termsContent
 
   return (
-    <Section disableTopMargin>
-      <Container size="md">
-        <Button
-          href="/"
-          className="mb-6 pl-0 md:mb-8"
-          variant="ghost"
-          size="sm"
-          iconLeft={<ChevronLeft />}
-        >
-          {buttonLabel}
-        </Button>
-        <SmallHero title={hero.title} subtitle={hero.subtitle} />
-        <ContentList items={sections} />
-      </Container>
-    </Section>
+    <>
+      <Section
+        disableTopMargin
+        disableBottomMargin
+        background="var(--color-surface-subtle)"
+      >
+        <Container size="md">
+          <Button
+            href="/"
+            className="mb-6 pl-0 md:mb-8"
+            variant="ghost"
+            size="sm"
+            iconLeft={<ChevronLeft />}
+          >
+            {buttonLabel}
+          </Button>
+          <SmallHero title={hero.title} subtitle={hero.subtitle} />
+        </Container>
+      </Section>
+      <Section disableTopMargin>
+        <Container size="md">
+          <ContentList items={sections} />
+        </Container>
+      </Section>
+    </>
   )
 }
