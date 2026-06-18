@@ -28,6 +28,11 @@ AI-powered fashion lookbook app. User uploads a selfie, picks a vibe, and gets A
 - Keep components small and readable
 - Prefer composition over abstraction
 
+## Content
+
+- All static copy (heading, paragraphs, labels, taglines, nav links) lives in `src/content/` — never hardcoded in components
+- One file per section/page: `footer.ts`, `home.ts`, etc.
+
 ## Rules
 
 - Do not install new packages unless explicitly requested
