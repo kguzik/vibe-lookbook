@@ -40,6 +40,7 @@ AI-powered fashion lookbook app. User uploads a selfie, picks a vibe, and gets A
 - Prefer simple React and TypeScript solutions
 - Use ES modules import/export syntax
 - Prefer `type` over `interface`
+- Use arrow functions instead of function declarations.
 
 ## Stylesheet
 
