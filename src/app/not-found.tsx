@@ -1,7 +1,11 @@
+import type { Metadata } from 'next'
 import { Hero } from '@/components/ui/Hero'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { notFoundContent } from '@/content/not-found'
+import { metadata as meta } from '@/content/metadata'
+
+export const metadata: Metadata = meta.notFound
 
 export default function NotFound() {
   const { heading, accentWord, subtitle, button } = notFoundContent

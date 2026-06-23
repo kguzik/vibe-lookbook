@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Source_Sans_3, Playfair_Display } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { metadata as meta } from '@/content/metadata'
 import './globals.css'
 
 const sourceSans = Source_Sans_3({
@@ -17,11 +18,7 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
 })
 
-export const metadata: Metadata = {
-  title: 'Vibe Lookbook - Your AI-Styled Fashion Lookbook',
-  description:
-    'Upload a selfie, pick your vibe, and get AI-generated editorial looks you can shop.',
-}
+export const metadata: Metadata = meta.home
 
 export default function RootLayout({
   children,
