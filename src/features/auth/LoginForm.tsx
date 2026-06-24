@@ -58,7 +58,7 @@ export const LoginForm = ({ isSignup }: Props) => {
   const [formErrors, setFormErrors] = useState<FormErrors>({})
   const [serverError, setServerError] = useState<string>()
   const [pending, setPending] = useState(false)
-  const waitingText = loginContent.signup.waitingText
+  const waitingText = loginContent.waitingText
 
   const submitLabel = isSignup
     ? loginContent.signup.submitButton

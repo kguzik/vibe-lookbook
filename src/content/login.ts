@@ -10,10 +10,10 @@ export const loginContent = {
     heading: 'Create an account',
     subtitle: 'Start creating your AI-styled lookbooks.',
     submitButton: 'Create account',
-    waitingText: 'Please wait...',
     toggleText: 'Already have an account?',
     toggleLink: 'Sign in',
   },
+  waitingText: 'Please wait...',
   google: {
     label: 'Continue with Google',
   },
