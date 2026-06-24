@@ -6,11 +6,8 @@ import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { loginContent } from '@/content/login'
+import { ErrorMessage } from '@/components/ui/ErrorMessage'
 import type { SubmitEventHandler } from 'react'
-
-type Props = {
-  isSignup: boolean
-}
 
 type FormErrors = {
   name?: string
@@ -52,7 +49,7 @@ const isValidEmail = (value: string): boolean => {
   return input.checkValidity()
 }
 
-export const LoginForm = ({ isSignup }: Props) => {
+export const LoginForm = ({ isSignup }: { isSignup: boolean }) => {
   const { fields } = loginContent
   const router = useRouter()
   const [formErrors, setFormErrors] = useState<FormErrors>({})
@@ -175,7 +172,7 @@ export const LoginForm = ({ isSignup }: Props) => {
           required
         />
       )}
-      {serverError && <p className="text-sm text-red-500">{serverError}</p>}
+      <ErrorMessage message={serverError} />
       <Button type="submit" className="w-full" size="lg" disabled={pending}>
         {pending ? waitingText : submitLabel}
       </Button>

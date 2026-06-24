@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import type { InputHTMLAttributes } from 'react'
 import { loginContent } from '@/content/login'
+import { ErrorMessage } from '@/components/ui/ErrorMessage'
 
 type InputType = 'text' | 'email' | 'password' | 'number' | 'tel' | 'url'
 
@@ -91,7 +92,7 @@ export const Input = ({
         onInvalid={handleInvalid}
         {...props}
       />
-      {error && <p className="text-xs text-red-500">{error}</p>}
+      <ErrorMessage message={error} />
       {!error && hint && (
         <p className="text-xs text-[var(--color-subtle)]">{hint}</p>
       )}
