@@ -35,11 +35,7 @@ export default function LoginPage() {
           <span className="text-xs text-[var(--color-subtle)]">{divider}</span>
           <div className="h-px flex-1 bg-[var(--color-border)]" />
         </div>
-        <LoginForm
-          key={mode}
-          isSignup={isSignup}
-          onSubmit={(e) => e.preventDefault()}
-        />
+        <LoginForm key={mode} isSignup={isSignup} />
         <p className="text-center text-sm">
           {content.toggleText}{' '}
           <button

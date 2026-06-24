@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { loginContent } from '@/content/login'
@@ -8,7 +10,6 @@ import type { SubmitEventHandler } from 'react'
 
 type Props = {
   isSignup: boolean
-  onSubmit: SubmitEventHandler<HTMLFormElement>
 }
 
 type FormErrors = {
@@ -51,9 +52,13 @@ const isValidEmail = (value: string): boolean => {
   return input.checkValidity()
 }
 
-export const LoginForm = ({ isSignup, onSubmit }: Props) => {
+export const LoginForm = ({ isSignup }: Props) => {
   const { fields } = loginContent
+  const router = useRouter()
   const [formErrors, setFormErrors] = useState<FormErrors>({})
+  const [serverError, setServerError] = useState<string>()
+  const [pending, setPending] = useState(false)
+  const waitingText = loginContent.signup.waitingText
 
   const submitLabel = isSignup
     ? loginContent.signup.submitButton
@@ -84,13 +89,34 @@ export const LoginForm = ({ isSignup, onSubmit }: Props) => {
     return formErrors
   }
 
-  const handleSubmit: SubmitEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmit: SubmitEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
+    setServerError(undefined)
     const formData = new FormData(e.currentTarget)
     const formErrors = validate(formData)
     setFormErrors(formErrors)
     if (Object.values(formErrors).some(Boolean)) return
-    onSubmit(e)
+
+    setPending(true)
+    const supabase = createClient()
+    const email = formData.get('email') as string
+    const password = formData.get('password') as string
+
+    const { error } = isSignup
+      ? await supabase.auth.signUp({
+          email,
+          password,
+          options: { data: { name: formData.get('name') as string } },
+        })
+      : await supabase.auth.signInWithPassword({ email, password })
+
+    if (error) {
+      setServerError(error.message)
+      setPending(false)
+      return
+    }
+
+    router.push('/account')
   }
 
   const clearError = (field: keyof FormErrors) => () => {
@@ -149,8 +175,9 @@ export const LoginForm = ({ isSignup, onSubmit }: Props) => {
           required
         />
       )}
-      <Button type="submit" className="w-full" size="lg">
-        {submitLabel}
+      {serverError && <p className="text-sm text-red-500">{serverError}</p>}
+      <Button type="submit" className="w-full" size="lg" disabled={pending}>
+        {pending ? waitingText : submitLabel}
       </Button>
     </form>
   )
