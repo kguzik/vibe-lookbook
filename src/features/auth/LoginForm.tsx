@@ -173,7 +173,12 @@ export const LoginForm = ({ isSignup }: { isSignup: boolean }) => {
         />
       )}
       <ErrorMessage message={serverError} />
-      <Button type="submit" className="w-full" size="lg" disabled={pending}>
+      <Button
+        type="submit"
+        className="mt-3 w-full"
+        size="lg"
+        disabled={pending}
+      >
         {pending ? waitingText : submitLabel}
       </Button>
     </form>

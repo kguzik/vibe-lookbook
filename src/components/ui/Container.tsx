@@ -1,12 +1,13 @@
 import { type HTMLAttributes } from 'react'
 
-type ContainerSize = 'sm' | 'md' | 'lg' | 'full'
+type ContainerSize = 'xs' | 'sm' | 'md' | 'lg' | 'full'
 
 type ContainerProps = HTMLAttributes<HTMLDivElement> & {
   size?: ContainerSize
 }
 
 const sizeStyles: Record<ContainerSize, string> = {
+  xs: 'max-w-lg',
   sm: 'max-w-xl',
   md: 'max-w-2xl',
   lg: 'max-w-5xl',
