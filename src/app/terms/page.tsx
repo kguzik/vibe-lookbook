@@ -14,7 +14,7 @@ export default function TermsPage() {
   const { buttonLabel, hero, sections } = termsContent
 
   return (
-    <>
+    <main>
       <Section
         disableTopMargin
         disableBottomMargin
@@ -38,6 +38,6 @@ export default function TermsPage() {
           <ContentList items={sections} />
         </Container>
       </Section>
-    </>
+    </main>
   )
 }

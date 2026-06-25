@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   const { buttonLabel, hero, sections } = privacyContent
 
   return (
-    <>
+    <main>
       <Section
         disableTopMargin
         disableBottomMargin
@@ -38,6 +38,6 @@ export default function PrivacyPage() {
           <ContentList items={sections} />
         </Container>
       </Section>
-    </>
+    </main>
   )
 }
