@@ -35,6 +35,7 @@ AI-powered fashion lookbook app. User uploads a selfie, picks a vibe, and gets A
 
 ## Rules
 
+- Always reuse existing components from `src/components/ui/` - if none fit, ask before creating a new one
 - Do not install new packages unless explicitly requested
 - Do not create unnecessary abstractions or custom hooks too early
 - Prefer simple React and TypeScript solutions

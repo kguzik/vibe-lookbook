@@ -23,4 +23,8 @@ export const metadata = {
     title: `Terms of Service - ${siteName}`,
     description: `The terms and conditions for using Vibe Lookbook.`,
   },
+  account: {
+    title: `My Account - ${siteName}`,
+    description: `Manage your Vibe Lookbook account, credits and generated lookbooks.`,
+  },
 }

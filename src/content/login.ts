@@ -17,9 +17,6 @@ export const loginContent = {
   google: {
     label: 'Continue with Google',
   },
-  signOut: {
-    label: 'Sign out',
-  },
   divider: 'or',
   fields: {
     name: {

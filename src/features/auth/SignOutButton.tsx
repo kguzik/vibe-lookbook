@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { signOut } from '@/features/auth/actions'
-import { loginContent } from '@/content/login'
+import { accountContent } from '@/content/account'
 
 export const SignOutButton = () => {
   const router = useRouter()
@@ -15,8 +15,8 @@ export const SignOutButton = () => {
   }
 
   return (
-    <Button variant="secondary" size="sm" onClick={handleSignOut}>
-      {loginContent.signOut.label}
+    <Button variant="primary" size="md" onClick={handleSignOut}>
+      {accountContent.signOut}
     </Button>
   )
 }
