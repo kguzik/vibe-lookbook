@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
 import { accountContent } from '@/content/account'
 import { SmallHero } from '@/components/ui/SmallHero'
+import { TwoColumnContent } from '@/components/ui/TwoColumnContent'
 
 export default async function AccountPage() {
   const supabase = await createClient()
@@ -33,20 +34,18 @@ export default async function AccountPage() {
       </Section>
       <Section>
         <Container size="lg">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="space-y-3">
-              <h2 className="h4">{sections.credits.heading}</h2>
-              <p className="text-sm text-[var(--color-subtle)]">
-                {sections.credits.empty}
-              </p>
-            </div>
-            <div className="space-y-3">
-              <h2 className="h4">{sections.lookbooks.heading}</h2>
-              <p className="text-sm text-[var(--color-subtle)]">
-                {sections.lookbooks.empty}
-              </p>
-            </div>
-          </div>
+          <TwoColumnContent
+            columns={[
+              {
+                heading: sections.credits.heading,
+                body: sections.credits.empty,
+              },
+              {
+                heading: sections.lookbooks.heading,
+                body: sections.lookbooks.empty,
+              },
+            ]}
+          />
         </Container>
       </Section>
       <Section disableTopMargin disableBottomMargin spacing="sm">

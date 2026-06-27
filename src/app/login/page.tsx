@@ -8,6 +8,7 @@ import { loginContent } from '@/content/login'
 import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
 import { SmallHero } from '@/components/ui/SmallHero'
+import { Divider } from '@/components/ui/Divider'
 
 type Mode = 'login' | 'signup'
 
@@ -39,13 +40,7 @@ export default function LoginPage() {
           >
             {google.label}
           </Button>
-          <div className="my-5 flex items-center gap-3 lg:my-6">
-            <div className="h-px flex-1 bg-[var(--color-border)]" />
-            <span className="text-xs text-[var(--color-subtle)]">
-              {divider}
-            </span>
-            <div className="h-px flex-1 bg-[var(--color-border)]" />
-          </div>
+          <Divider label={divider} />
           <LoginForm key={mode} isSignup={isSignup} />
           <p className="mt-3 text-center text-sm">
             {content.toggleText}{' '}
