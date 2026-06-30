@@ -6,9 +6,8 @@ export const accountContent = {
       heading: 'Credits',
       empty: 'You have no credits yet.',
     },
-    lookbooks: {
-      heading: 'My Lookbooks',
-      empty: "You haven't generated any lookbooks yet.",
+    email: {
+      heading: 'My Email',
     },
   },
   signOut: 'Sign out',

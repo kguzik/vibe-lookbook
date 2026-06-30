@@ -15,7 +15,8 @@ export default async function AccountPage() {
 
   if (!user) redirect('/login')
 
-  const name = user.user_metadata?.name ?? user.email
+  const name = user.user_metadata?.name ?? user.email ?? 'user'
+  const email = user.email ?? '-'
   const { sections } = accountContent
 
   return (
@@ -41,8 +42,8 @@ export default async function AccountPage() {
                 body: sections.credits.empty,
               },
               {
-                heading: sections.lookbooks.heading,
-                body: sections.lookbooks.empty,
+                heading: sections.email.heading,
+                body: email,
               },
             ]}
           />
