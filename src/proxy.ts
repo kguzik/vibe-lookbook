@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 const PROTECTED_ROUTES = ['/account', '/generate', '/gallery']
 const AUTH_ROUTES = ['/login']
 
-export const middleware = async (request: NextRequest) => {
+export const proxy = async (request: NextRequest) => {
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
@@ -31,6 +31,10 @@ export const middleware = async (request: NextRequest) => {
   } = await supabase.auth.getUser()
   const { pathname } = request.nextUrl
 
+  // Server actions are POST requests with a Next-Action header — never redirect them
+  const isServerAction =
+    request.method === 'POST' && request.headers.has('next-action')
+
   const isProtected = PROTECTED_ROUTES.some((route) =>
     pathname.startsWith(route),
   )
@@ -46,8 +50,8 @@ export const middleware = async (request: NextRequest) => {
     return response
   }
 
-  if (isProtected && !user) return redirect('/login')
-  if (isAuthRoute && user) return redirect('/account')
+  if (!isServerAction && isProtected && !user) return redirect('/login')
+  if (!isServerAction && isAuthRoute && user) return redirect('/account')
 
   return supabaseResponse
 }

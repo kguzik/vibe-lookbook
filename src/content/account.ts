@@ -12,4 +12,5 @@ export const accountContent = {
     },
   },
   signOut: 'Sign out',
+  waitingText: 'Please wait...',
 }
