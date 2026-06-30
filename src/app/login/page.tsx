@@ -9,11 +9,20 @@ import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
 import { SmallHero } from '@/components/ui/SmallHero'
 import { Divider } from '@/components/ui/Divider'
+import { createClient } from '@/lib/supabase/client'
 
 type Mode = 'login' | 'signup'
 
 export default function LoginPage() {
   const [mode, setMode] = useState<Mode>('login')
+
+  const handleGoogleSignIn = async () => {
+    const supabase = createClient()
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/auth/callback` },
+    })
+  }
 
   const isSignup = mode === 'signup'
   const content = isSignup ? loginContent.signup : loginContent.login
@@ -36,7 +45,7 @@ export default function LoginPage() {
             variant="secondary"
             className="m-auto !flex max-w-[220px]"
             iconLeft={<Google />}
-            onClick={() => {}}
+            onClick={handleGoogleSignIn}
           >
             {google.label}
           </Button>
