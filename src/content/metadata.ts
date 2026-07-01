@@ -27,4 +27,8 @@ export const metadata = {
     title: `My Account - ${siteName}`,
     description: `Manage your Vibe Lookbook account, credits and generated lookbooks.`,
   },
+  generate: {
+    title: `Create Your Lookbook - ${siteName}`,
+    description: `Upload a photo, pick your vibe, and get AI-generated editorial looks styled just for you.`,
+  },
 }

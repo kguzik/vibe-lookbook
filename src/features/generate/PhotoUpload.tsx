@@ -120,6 +120,7 @@ export const PhotoUpload = ({ onPhotoChange }: PhotoUploadProps) => {
           <Button
             variant="secondary"
             size="md"
+            className="w-full"
             onClick={() => cameraInputRef.current?.click()}
           >
             {photoUpload.cameraButton}
