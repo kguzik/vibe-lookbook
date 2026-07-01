@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react'
 
-type SectionSpacing = 'sm' | 'md' | 'lg'
+type SectionSpacing = 'xs' | 'sm' | 'md' | 'lg'
 
 type SectionProps = HTMLAttributes<HTMLElement> & {
   spacing?: SectionSpacing
@@ -10,6 +10,7 @@ type SectionProps = HTMLAttributes<HTMLElement> & {
 }
 
 const paddingStyles: Record<SectionSpacing, string> = {
+  xs: 'py-4 md:py-6',
   sm: 'py-8 md:py-10',
   md: 'py-10 md:py-16',
   lg: 'py-16 md:py-24',
